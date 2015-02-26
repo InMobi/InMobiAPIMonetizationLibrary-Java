@@ -28,12 +28,12 @@ public class Launch {
 		Request request = new Request();
 		//property 
 		Property property = null;
-		property = new Property("96e07a4ac85e49acb9c0515d4e59b7de");
+		property = new Property("YOUR_PROPERTY_ID");
 		request.setProperty(property);
 		
 		//device 
-		Device device = new Device("87.84.221.50",
-				"Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B350");
+		Device device = new Device("CARRIER_IP",
+				"MOBILE UA");
 		request.setDevice(device);
 		
 		//impression 
