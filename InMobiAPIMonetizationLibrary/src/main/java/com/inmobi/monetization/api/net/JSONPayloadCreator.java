@@ -140,10 +140,24 @@ public class JSONPayloadCreator {
 				if (ua != null) {
 					deviceObject.addProperty("ua", ua);
 				}
+				//for Android sites..
 				String gpid = device.getGpId();
 				if (gpid != null) {
 					deviceObject.addProperty("gpid", gpid);
 				}
+				String aid = device.getAndroidId();
+				//Note: the android Id must be either SHA-1 value of the original id, passed as o1, or md5 hashed value
+				//this example assumes o1 value is passed, or only gpid may be passed.
+				if(aid != null) {
+					deviceObject.addProperty("o1", aid);
+				}
+				
+				//for iOS sites..
+				String ida = device.getIda();
+				if(ida != null) {
+					deviceObject.addProperty("ida", ida);
+				}
+				
 			}
 
 			Geo geo = device.getGeo();
