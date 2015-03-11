@@ -54,8 +54,8 @@ public class Launch {
 		for(BannerResponse b : ads1) {
 			//b.ad
 		}
-		//ArrayList<IMBannerResponse> ads = interstitial.loadSyncInterstitialAd();
-//		for (IMBannerResponse b : ads) {
+		//ArrayList<BannerResponse> ads = interstitial.loadSyncInterstitialAd();
+//		for (BannerResponse b : ads) {
 //			System.out.println(b.toString());
 //		}
 		//ArrayList<NativeResponse> ads = nativeAd.loadSyncRequest(request);

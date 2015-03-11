@@ -32,7 +32,7 @@ import com.google.gson.JsonObject;
  * @note It is your responsibility to check if the request contains the
  *       mandatory required parameters. If the mandatory parameters are not
  *       present, the server would terminated the request. <br/>
- *       We recommend converting AdRequestObject to JsonObject using <b>
+ *       We recommend converting Request Object to JsonObject using <b>
  *       JSONPayloadCreator</b>, so that any missing parameter can be
  *       identified.<br/> 
  *       Publishers may also check 'isRequestInProgress' before

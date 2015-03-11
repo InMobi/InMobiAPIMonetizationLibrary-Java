@@ -14,10 +14,10 @@ Base64
 XML Parser 
 Others
 Third party classes - If any third party “as-is” component is required.
-Monetization package - consisting of IMBanner, IMInterstitial, IMNative classes.
+Monetization package - consisting of Banner, Interstitial, Native classes.
 
 
-Publishers are expected to use classes under monetization package directly, and pass IMAdRequest object with valid arguments, to obtain ads from InMobi.
+Publishers are expected to use classes under monetization package directly, and pass AdRequest object with valid arguments, to obtain ads from InMobi.
 
 Note: Publishers may freely use any components of the code they like, if the entire project, or its components may not be used somehow.
 

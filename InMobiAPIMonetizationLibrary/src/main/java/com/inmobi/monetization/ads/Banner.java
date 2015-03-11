@@ -26,7 +26,7 @@ public class Banner extends AdFormat {
 	}
 
 	/**
-	 * This method is internally called from sync/async loadRequest.
+	 * This method is internally called from loadRequest.
 	 * 
 	 * @param request
 	 *            The Request object
@@ -62,9 +62,9 @@ public class Banner extends AdFormat {
 	 * @note Please check for isRequestInProgress to false, before calling this
 	 *       function.<br/>
 	 *       The function returns null if the request was already in progress.
-	 *       Please also provide a valid IMAdRequestObject. You may check if the
+	 *       Please also provide a valid Request Object. You may check if the
 	 *       IMAdRequest object is valid by calling isValid() on the object.
-	 * @return ArrayList containing the IMBannerResponse objects.
+	 * @return ArrayList containing the BannerResponse objects.
 	 */
 
 	public synchronized ArrayList<BannerResponse> loadRequest(
