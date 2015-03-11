@@ -45,7 +45,7 @@ public class InterstitialTest {
 		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
-		request.setImpression(new Impression(1, false,null, null, null));
+		request.setImpression(new Impression(null));
 		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		

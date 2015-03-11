@@ -45,7 +45,7 @@ public class NativeTest {
 		ads = nativeAd.loadRequest(request);
 		assertEquals(0,ads.size());
 		
-		request.setImpression(new Impression(1, false,null, null, null));
+		request.setImpression(new Impression(null));
 		ads = nativeAd.loadRequest(request);
 		assertEquals(0,ads.size());
 		

@@ -33,7 +33,7 @@ Request request = new Request();
 		request.setDevice(device);
 		
 		//impression 
-		Impression imp = new Impression(1,false,"test","1.0",new Slot(15,"top"));
+		Impression imp = new Impression(new Slot(15,"top"));
 		request.setImpression(imp);
 		
 		//user , optional object
@@ -56,7 +56,7 @@ Request request = new Request();
 		//view this page for more details: https://www.inmobi.com/support/art/26555436/22465648/api-2-0-integration-//guidelines/
 
 		
-		Impression imp = new Impression(1,false,"test","1.0",new Slot(14,null));
+		Impression imp = new Impression(new Slot(14,null));
 		//using same request object as above, but only changing the impression object.
 		request.setImpression();
 

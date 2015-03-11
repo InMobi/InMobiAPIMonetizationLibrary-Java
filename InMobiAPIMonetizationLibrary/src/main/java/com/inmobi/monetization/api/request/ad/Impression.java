@@ -133,13 +133,7 @@ public class Impression implements Validator {
 		this.slot = slot;
 	}
 
-	public Impression(int noOfAds, boolean isInterstitial,
-			String displayManager, String displayManagerVersion,
-			Slot slot) {
-		setNoOfAds(noOfAds);
-		setInterstitial(isInterstitial);
-		setDisplayManager(displayManager);
-		setDisplayManagerVersion(displayManagerVersion);
+	public Impression(Slot slot) {
 		setSlot(slot);
 	}
 

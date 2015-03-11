@@ -37,7 +37,7 @@ public class Launch {
 		request.setDevice(device);
 		
 		//impression 
-		Impression imp = new Impression(1,false,"test","1.0",new Slot(15,"top"));
+		Impression imp = new Impression(new Slot(15,"top"));
 		request.setImpression(imp);
 		
 		//user 
