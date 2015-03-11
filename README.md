@@ -44,7 +44,7 @@ Request request = new Request();
 		//example to load a banner ad
 		Banner banner = new Banner();
 		
-		ArrayList<BannerResponse> ads = banner.loadSyncRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
+		ArrayList<BannerResponse> ads = banner.loadRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
 
 		for(BannerResponse b : ads) {
 			//iterate through the banner response object
@@ -61,7 +61,7 @@ Request request = new Request();
 		request.setImpression();
 
 		Interstitial interstitial = new Interstitial();
-		ArrayList<BannerResponse> ads = interstitial.loadSyncRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
+		ArrayList<BannerResponse> ads = interstitial.loadRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
 
 		for(BannerResponse b : ads) {
 			//iterate through the  response object
@@ -71,7 +71,7 @@ Request request = new Request();
 
 		Native nativeAd = new Native();
 
-		ArrayList<NativeResponse> ads = nativeAd.loadSyncRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
+		ArrayList<NativeResponse> ads = nativeAd.loadRequest(request); // by default only 1 ad will be served, or 0 if a request has invalid parameters, or a no-fill happens.
 
 		for(NativeResponse b : ads) {
 			//iterate through the  response object

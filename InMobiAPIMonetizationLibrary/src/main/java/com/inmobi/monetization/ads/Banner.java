@@ -34,7 +34,7 @@ public class Banner extends AdFormat {
 	 *            One of Banner,Interstitial or Native ad-format
 	 * @return
 	 */
-	protected ArrayList<BannerResponse> loadSyncRequestInternal(
+	protected ArrayList<BannerResponse> loadRequestInternal(
 			Request request, AdRequest requestType) {
 		ArrayList<BannerResponse> ads = null;
 		errorCode = null;
@@ -67,46 +67,14 @@ public class Banner extends AdFormat {
 	 * @return ArrayList containing the IMBannerResponse objects.
 	 */
 
-	public synchronized ArrayList<BannerResponse> loadSyncRequest(
+	public synchronized ArrayList<BannerResponse> loadRequest(
 			Request request) {
 
 		ArrayList<BannerResponse> ads = null;
 		if (canLoadRequest(request, requestType) == true) {
-			ads = loadSyncRequestInternal(request, requestType);
+			ads = loadRequestInternal(request, requestType);
 		}
 
 		return ads;
-	}
-
-	/**
-	 * This method fires the ad request in a new thread.
-	 * 
-	 * @note You must implement a listener to get success/failure connection
-	 *       callbacks. Please refer the loadSyncBannerAd() description for
-	 *       details.
-	 */
-	public void loadAsyncRequest(final Request request,
-			final AdFormatListener listener) {
-		final Banner bannerAd = this;
-		if (request == null) {
-			return;
-		}
-		if (listener == null) {
-			return;
-		}
-		(new Thread() {
-			public void run() {
-				ArrayList<BannerResponse> ads = null;
-				if (canLoadRequest(request, requestType) == true) {
-					ads = loadSyncRequestInternal(request, requestType);
-					if (ads != null && ads.size() > 0) {
-						listener.onSuccess(bannerAd, ads);
-					} else {
-						listener.onFailure(bannerAd, errorCode);
-					}
-				}
-
-			}
-		}).start();
 	}
 }

@@ -49,9 +49,8 @@ public class Launch {
 		
 		Banner banner = new Banner();
 		
-		banner.loadAsyncRequest(request,null);
 		Interstitial interstitial = new Interstitial();
-		ArrayList<BannerResponse> ads1 = banner.loadSyncRequest(request);
+		ArrayList<BannerResponse> ads1 = banner.loadRequest(request);
 		for(BannerResponse b : ads1) {
 			//b.ad
 		}
@@ -76,7 +75,7 @@ public class Launch {
 				
 			}
 		};
-		nativeAd.loadAsyncRequest(request, listener);
+		//nativeAd.loadSyncRequest(request, listener);
 		
 
 		

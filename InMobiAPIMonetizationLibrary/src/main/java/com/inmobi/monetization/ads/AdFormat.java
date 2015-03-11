@@ -37,14 +37,7 @@ public abstract class AdFormat {
 	 * @param request
 	 * @return
 	 */
-	public abstract ArrayList<? extends AdResponse> loadSyncRequest(Request request);
-	
-	/**
-	 * Override this method to trigger an asynchronous request.
-	 * @param request
-	 * @param listener
-	 */
-	public abstract void loadAsyncRequest(Request request,AdFormatListener listener);
+	public abstract ArrayList<? extends AdResponse> loadRequest(Request request);
 	
 	protected boolean canLoadRequest(Request request,AdRequest requestType) {
 		boolean valid = false;

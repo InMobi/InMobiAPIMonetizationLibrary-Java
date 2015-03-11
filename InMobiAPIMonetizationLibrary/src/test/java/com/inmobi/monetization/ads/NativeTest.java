@@ -23,14 +23,14 @@ public class NativeTest {
 		Request request = new Request();
 		ArrayList<NativeResponse> ads;
 		
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertNull(ads);
 		
 		nativeAd = new Native();
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertNull(ads);
 		
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertNull(ads);
 		
 		Property property = null;
@@ -42,15 +42,15 @@ public class NativeTest {
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B350");
 		request.setDevice(device);
 		
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertEquals(0,ads.size());
 		
 		request.setImpression(new Impression(1, false,null, null, null));
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertEquals(0,ads.size());
 		
 		request.getImpression().setSlot(new Slot(15, null));
-		ads = nativeAd.loadSyncRequest(request);
+		ads = nativeAd.loadRequest(request);
 		assertEquals(0,ads.size());
 	}
 

@@ -23,14 +23,14 @@ public class InterstitialTest {
 		Request request = new Request();
 		ArrayList<BannerResponse> ads;
 		
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
 		interstitial = new Interstitial();
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
 		Property property = null;
@@ -42,15 +42,15 @@ public class InterstitialTest {
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B350");
 		request.setDevice(device);
 		
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
 		request.setImpression(new Impression(1, false,null, null, null));
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertNull(ads);
 		
 		request.getImpression().setSlot(new Slot(14, null));
-		ads = interstitial.loadSyncRequest(request);
+		ads = interstitial.loadRequest(request);
 		assertEquals(0,ads.size());
 	}
 
