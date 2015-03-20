@@ -61,8 +61,7 @@ public class RequestResponseManagerTest {
 	public void testValidRequestObjectWithInvalidParams() {
 		RequestResponseManager mgr = new RequestResponseManager();
 		Property prop = new Property("sdf");
-		Impression imp = new Impression(1, false, null, null,
-				new Slot(15, null));
+		Impression imp = new Impression(null);
 		Device device = new Device("carrier ip", "user agent");
 		Request request = new Request(imp, null, prop, device);
 
@@ -123,8 +122,7 @@ public class RequestResponseManagerTest {
 	public void testValidRequestResponseWithValidParams() {
 		RequestResponseManager mgr = new RequestResponseManager();
 		Property prop = new Property("4028cbff3b187e27013b4d4a431d08f2");
-		Impression imp = new Impression(1, false, null, null,
-				new Slot(15, null));
+		Impression imp = new Impression();
 		Device device = new Device(
 				"6.0.0.0",
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/538.39.2 (KHTML, like Gecko) Version/7.0 Mobile/12A4297e Safari/9537.53");

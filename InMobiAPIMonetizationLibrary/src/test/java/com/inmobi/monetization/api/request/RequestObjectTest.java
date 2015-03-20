@@ -375,42 +375,24 @@ public class RequestObjectTest {
 
 		no = 3;
 		boolean isInt = false;
-		String display_mgr = "display_mgr";
-		String display_mgr_ver = "display_mgr_ver";
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				banner);
-		assertEquals(no, imp.getNoOfAds());
-		assertEquals(display_mgr, imp.getDisplayManager());
-		assertEquals(display_mgr_ver, imp.getDisplayManagerVersion());
-		assertEquals(isInt, imp.isInterstitial());
+		imp = new Impression();
 
 		// check isValid
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				banner);
+		imp = new Impression(banner);
 		assertFalse(imp.isValid());
 
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				null);
+		imp = new Impression(null);
 		assertFalse(imp.isValid());
 
 		banner = new Slot(15, "");
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				banner);
-		assertTrue(imp.isValid());
-		assertTrue(imp.isValid());
+		imp = new Impression(banner);
 		assertTrue(imp.isValid());
 
 		banner = new Slot(10, "top");
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				banner);
-		assertTrue(imp.isValid());
-		assertTrue(imp.isValid());
+		imp = new Impression(banner);
 		assertTrue(imp.isValid());
 
 		banner = new Slot(-10, "top");
-		imp = new Impression(no, isInt, display_mgr, display_mgr_ver,
-				banner);
-		assertFalse(imp.isValid());
 	}
 
 	@Test
@@ -434,17 +416,5 @@ public class RequestObjectTest {
 
 		request.setImpression(new Impression());
 		assertFalse(request.isValid());
-		
-		request.setImpression(new Impression(3,false,null,null,null));
-		assertFalse(request.isValid());
-		
-		request.setImpression(new Impression(3,false,null,null,new Slot()));
-		assertFalse(request.isValid());
-		
-		request.setImpression(new Impression(3,false,null,null,new Slot(-1,null)));
-		assertFalse(request.isValid());
-		
-		request.setImpression(new Impression(3,false,null,null,new Slot(15,null)));
-		assertTrue(request.isValid());
 	}
 }
