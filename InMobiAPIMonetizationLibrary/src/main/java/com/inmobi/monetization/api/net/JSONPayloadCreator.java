@@ -157,7 +157,11 @@ public class JSONPayloadCreator {
 				if(ida != null) {
 					deviceObject.addProperty("ida", ida);
 				}
-				
+				if(device.isAdTrackingDisabled() == true) {
+					deviceObject.addProperty("adt", 1);
+				} else {
+					deviceObject.addProperty("adt", 0);
+				}
 			}
 
 			Geo geo = device.getGeo();

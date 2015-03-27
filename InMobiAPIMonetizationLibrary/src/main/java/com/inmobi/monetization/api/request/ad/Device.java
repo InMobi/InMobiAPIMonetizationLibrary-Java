@@ -30,7 +30,7 @@ public class Device implements Validator {
 	private String androidId = null;
 	private String ida = null;
 	private Geo geo = null;
-
+	private boolean isAdTrackingDisabled = false;
 	/**
 	 * 
 	 * @return The String value containing the carrier IP.
@@ -187,5 +187,13 @@ public class Device implements Validator {
 		}
 
 		return isValid;
+	}
+
+	public boolean isAdTrackingDisabled() {
+		return isAdTrackingDisabled;
+	}
+
+	public void setAdTrackingDisabled(boolean isAdTrackingDisabled) {
+		this.isAdTrackingDisabled = isAdTrackingDisabled;
 	}
 }
